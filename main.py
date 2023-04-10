@@ -58,7 +58,7 @@ def generate_new_access_token(refresh_token):
     # Rückgabe des aktualisierten Access Tokens
     return new_access_token
 
-# Definition einer Funktion zur Abfrage von Marketing-Leads der https://einfach-zum-angebot.de/ Webseite sowie der Übertragung der Leads in das ZOHO CRM System
+# Definition einer Funktion zur Abfrage von Marketing-Leads der https://einfach-zum-angebot.de/ API sowie der Übertragung der Leads in das ZOHO CRM System
 def create_leads(access_token):
     # Festelgen der URL, von der die Marketing-Leads des Typs "Immobilie" abgerufen werden sollen (Imaginär, da kein Autorisierungstoken für die API zur Verfügung gestellt wurde)
     leads_url = "https://api.einfach-zum-angebot.de/leads?type=IMMOBILIE"
@@ -70,7 +70,7 @@ def create_leads(access_token):
     #response = requests.get(leads_url, headers=headers)
     #response_json = response.json()
 
-    # Erstellung einer imaginären Response, die so aufgebaut ist, wie die Response der API Schnittstelle 
+    # Erstellung einer imaginären Response, die so aufgebaut ist, wie die Response der https://einfach-zum-angebot.de/ API (siehe https://api.einfach-zum-angebot.de/docs/leads/#get-get-a-single-lead)
     fake_response = {"data": {
     "id": 135861,
     "contact_firstname": "Max",
@@ -142,7 +142,6 @@ def create_leads(access_token):
     request_body = dict()
     request_body['data'] = record_list
 
-    # URL für die Erstellung von Leads in ZOHO
     # Festelgen der ZOHO CRM URL, an die Marketing-Leads versendet werden soll
     zoho_url = "https://www.zohoapis.eu/crm/v2/Leads"
     
@@ -170,5 +169,5 @@ def main(refresh_token):
 # Aufrufen der Main Funktion
 main(refresh_token)
 
-# Benachrichtigung die unter MacOS angezeigt wird, sobald das main.py Skript erfolgreich ausgeführt wurde -> Anleitung für die Festlegung der täglichen Ausführung des Skripts via Cronjobs unter https://github.com/lukas-bst/1K5-Case
+# Benachrichtigung, die unter MacOS angezeigt wird, sobald das main.py Skript erfolgreich ausgeführt wurde -> Anleitung für die Festlegung der täglichen Ausführung des Skripts via Cronjobs unter https://github.com/lukas-bst/1K5-Case
 os.system('osascript -e \'display notification "ZOHO Lead Skript wurde erfolgreich ausgeführt." with title "Skript"\'')
