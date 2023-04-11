@@ -23,5 +23,5 @@
         - Ersetze "pfad_zu_python_interpreter" durch den eigenen Python Interpreter-Pfad
         - Ersetze "pfad_zu_main.py" durch den eigenen Pfad zur main.py-Datei
       - Beispiel Cronjob: `30 9 * * * /usr/bin/python3 /Users/Benutzer/Documents/main.py`
-      - Nach der Ausführung des Befehls sollte zukünftig ein neuer Lead täglich um 9.30 Uhr in der in der "Entwickler Sandbox OneCRM" angelegt werden
+      - Nach der Ausführung des Befehls sollte zukünftig ein neuer Lead täglich um 9.30 Uhr in der "Entwickler Sandbox OneCRM" angelegt werden
    2. Hinweis: Stelle sicher, dass der Cronjob die erforderlichen Berechtigungen hat, um auf alle Dateien oder Verzeichnisse zuzugreifen, die vom Skript benötigt werden
