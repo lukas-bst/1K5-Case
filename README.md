@@ -1,6 +1,7 @@
 # 1Komma5° - Tech Case
 
 ## Beantwortung der Tech Case durch: Lukas Bauerschmidt
+## Aufgabenstellung: Code eine API Schnittstelle zwischen einer Lead- Generierungs Website und ZOHO CRM
 ## Datum: 11.04.2023
 ## Verwendete Programmiersprache: Python
 
